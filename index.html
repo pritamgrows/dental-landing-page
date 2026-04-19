@@ -1192,6 +1192,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const phone = document.getElementById('popup-phone').value.trim();
       if (!name || !phone) { alert('Please fill in your name and WhatsApp number.'); return; }
       const msg = encodeURIComponent(`Hi, I'd like a free patient acquisition plan.\n\nName: ${name}\nClinic: ${clinic || 'Not provided'}\nPhone: ${phone}`);
+      window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  event: 'lead_submitted'
+});
       window.open(`https://wa.me/7001225654?text=${msg}`, '_blank');
       closePopup();
     }
